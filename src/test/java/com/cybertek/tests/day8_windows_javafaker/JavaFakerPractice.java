@@ -10,5 +10,8 @@ public class JavaFakerPractice {
 
         String fullName=faker.name().fullName();
         System.out.println("fullName = " + fullName);
+
+        String chuck=faker.chuckNorris().fact();
+        System.out.println("chuck = " + chuck);
     }
 }
