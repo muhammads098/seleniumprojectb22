@@ -3,6 +3,7 @@ package com.cybertek.tests.day12_actions_upload_jsexecutor;
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
@@ -62,6 +63,24 @@ public class ActionsPractices {
         //a. “name: user3” is displayed
         Assert.assertTrue(user3.isDisplayed(), "User3 text is not displayed. FAIL!!!");
 
+
+    }
+
+    @Test
+    public void scrolling_test(){
+        Driver.getDriver().get("http://practice.cybertekschool.com");
+        Actions actions = new Actions(Driver.getDriver());
+       WebElement cybertekSchoolLink= Driver.getDriver().findElement(By.linkText("Cybertek School"));
+       actions.moveToElement(cybertekSchoolLink).perform();
+
+       BrowserUtils.sleep(1);
+       actions.sendKeys(Keys.PAGE_UP).perform();
+
+       BrowserUtils.sleep(1);
+       actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+       BrowserUtils.sleep(1);
+       actions.sendKeys(Keys.PAGE_UP,Keys.PAGE_UP,Keys.PAGE_UP,Keys.PAGE_UP);
 
     }
 
