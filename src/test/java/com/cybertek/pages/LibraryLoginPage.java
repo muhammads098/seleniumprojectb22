@@ -21,9 +21,13 @@ public class LibraryLoginPage {
     @FindBy(xpath = "//button[text()='Sign in']")
     public WebElement signInButton;
 
+
+   //appears when user enters invalid email tyoe
     @FindBy(id = "inputEmail-error")
     public WebElement invalidEmailError;
 
+
+    //appears when user enter invalid email or password
     @FindBy(xpath = "//div[@class='alert alert-danger']")
     public WebElement incorrectEmailOrPasswordError;
 
